@@ -29,10 +29,16 @@
     <script>
         let params = (new URL(document.location)).searchParams;
         let userID = params.get("userID");
+        console.log(userID);
 
         const div = document.getElementById('text');
-        const content = document.createTextNode(userID);
-        div.appendChild(content);
+
+        if (userID !== null) {
+            const content = document.createTextNode(userID);
+            div.appendChild(content);
+        } else {
+            div.style.display = 'none';
+        }
     </script>
 </body>
 
